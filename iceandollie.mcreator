@@ -20,8 +20,8 @@
       "registry_name": "bamboo",
       "metadata": {
         "files": [
-          "src/main/resources/assets/iceandollie/models/item/bamboo.json",
-          "src/main/java/net/mcreator/iceandollie/item/BambooItem.java"
+          "src/main/java/net/mcreator/iceandollie/item/BambooItem.java",
+          "src/main/resources/assets/iceandollie/models/item/bamboo.json"
         ]
       }
     }
