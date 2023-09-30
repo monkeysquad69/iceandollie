@@ -31,6 +31,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.iceandollie.init.IceandollieModTabs;
 import net.mcreator.iceandollie.init.IceandollieModSounds;
+import net.mcreator.iceandollie.init.IceandollieModMenus;
 import net.mcreator.iceandollie.init.IceandollieModItems;
 import net.mcreator.iceandollie.init.IceandollieModEntities;
 
@@ -58,6 +59,7 @@ public class IceandollieMod {
 
 		IceandollieModTabs.REGISTRY.register(bus);
 
+		IceandollieModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";
