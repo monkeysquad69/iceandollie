@@ -109,6 +109,22 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "pop_1",
+      "files": [
+        "pop_1"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "pop_2",
+      "files": [
+        "pop-1"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "language_map": {
@@ -117,6 +133,8 @@
       "item.iceandollie.bamboo": "Bamboo",
       "subtitles.balloon_snap": "",
       "item_group.iceandollie.quests": "Quests",
+      "subtitles.pop_2": "",
+      "subtitles.pop_1": "",
       "subtitles.balloon_pop": "",
       "item.iceandollie.balloon_spawn_egg": "Balloon Spawn Egg"
     }

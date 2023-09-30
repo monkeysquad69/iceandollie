@@ -35,6 +35,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.iceandollie.procedures.BalloonOnInitialEntitySpawnProcedure;
+import net.mcreator.iceandollie.procedures.BalloonEntityDiesProcedure;
 import net.mcreator.iceandollie.init.IceandollieModEntities;
 
 import javax.annotation.Nullable;
@@ -83,7 +84,13 @@ public class BalloonEntity extends PathfinderMob {
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("iceandollie:balloon_pop"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("iceandollie:pop_2"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		BalloonEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override

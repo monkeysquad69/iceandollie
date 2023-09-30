@@ -17,4 +17,6 @@ public class IceandollieModSounds {
 	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, IceandollieMod.MODID);
 	public static final RegistryObject<SoundEvent> BALLOON_POP = REGISTRY.register("balloon_pop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("iceandollie", "balloon_pop")));
 	public static final RegistryObject<SoundEvent> BALLOON_SNAP = REGISTRY.register("balloon_snap", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("iceandollie", "balloon_snap")));
+	public static final RegistryObject<SoundEvent> POP_1 = REGISTRY.register("pop_1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("iceandollie", "pop_1")));
+	public static final RegistryObject<SoundEvent> POP_2 = REGISTRY.register("pop_2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("iceandollie", "pop_2")));
 }
