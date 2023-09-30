@@ -8,11 +8,11 @@ import net.minecraft.world.food.FoodProperties;
 
 public class BambooItem extends Item {
 	public BambooItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(3).saturationMod(0.3f).alwaysEat().meat().build()));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(3).saturationMod(0.3f).build()));
 	}
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		return 0;
+		return 10;
 	}
 }
