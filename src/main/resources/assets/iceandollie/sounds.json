@@ -1,0 +1,18 @@
+{
+  "balloon_pop": {
+    "sounds": [
+      {
+        "name": "iceandollie:pop",
+        "stream": false
+      }
+    ]
+  },
+  "balloon_snap": {
+    "sounds": [
+      {
+        "name": "iceandollie:snap",
+        "stream": false
+      }
+    ]
+  }
+}

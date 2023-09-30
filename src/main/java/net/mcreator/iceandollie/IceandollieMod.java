@@ -30,7 +30,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.iceandollie.init.IceandollieModTabs;
+import net.mcreator.iceandollie.init.IceandollieModSounds;
 import net.mcreator.iceandollie.init.IceandollieModItems;
+import net.mcreator.iceandollie.init.IceandollieModEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -49,8 +51,10 @@ public class IceandollieMod {
 	public IceandollieMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		IceandollieModSounds.REGISTRY.register(bus);
 
 		IceandollieModItems.REGISTRY.register(bus);
+		IceandollieModEntities.REGISTRY.register(bus);
 
 		IceandollieModTabs.REGISTRY.register(bus);
 

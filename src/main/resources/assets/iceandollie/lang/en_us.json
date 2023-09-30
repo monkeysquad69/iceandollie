@@ -1,4 +1,8 @@
 {
+  "entity.iceandollie.balloon": "Balloon",
   "item.iceandollie.bamboo": "Bamboo",
-  "item_group.iceandollie.quests": "Quests"
+  "subtitles.balloon_snap": "",
+  "item_group.iceandollie.quests": "Quests",
+  "subtitles.balloon_pop": "",
+  "item.iceandollie.balloon_spawn_egg": "Balloon Spawn Egg"
 }

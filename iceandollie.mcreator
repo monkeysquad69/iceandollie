@@ -24,14 +24,101 @@
           "src/main/resources/assets/iceandollie/models/item/bamboo.json"
         ]
       }
+    },
+    {
+      "name": "Balloon",
+      "type": "livingentity",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "balloon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/entity/BalloonEntity.java",
+          "src/main/java/net/mcreator/iceandollie/client/renderer/BalloonRenderer.java",
+          "src/main/resources/data/iceandollie/forge/biome_modifier/balloon_biome_modifier.json",
+          "src/main/resources/assets/iceandollie/models/item/balloon_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "BalloonOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "balloon_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/procedures/BalloonOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BalloonEntityDies",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "balloon_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/procedures/BalloonEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "balloon_pop",
+      "files": [
+        "pop"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "balloon_snap",
+      "files": [
+        "snap"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    }
+  ],
   "language_map": {
     "en_us": {
+      "entity.iceandollie.balloon": "Balloon",
       "item.iceandollie.bamboo": "Bamboo",
-      "item_group.iceandollie.quests": "Quests"
+      "subtitles.balloon_snap": "",
+      "item_group.iceandollie.quests": "Quests",
+      "subtitles.balloon_pop": "",
+      "item.iceandollie.balloon_spawn_egg": "Balloon Spawn Egg"
     }
   },
   "foldersRoot": {
