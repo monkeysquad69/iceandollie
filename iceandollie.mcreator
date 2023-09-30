@@ -1,9 +1,38 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "Quests",
+      "type": "tab",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "quests",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Bamboo",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bamboo",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/iceandollie/models/item/bamboo.json",
+          "src/main/java/net/mcreator/iceandollie/item/BambooItem.java"
+        ]
+      }
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item.iceandollie.bamboo": "Bamboo",
+      "item_group.iceandollie.quests": "Quests"
+    }
   },
   "foldersRoot": {
     "name": "~",

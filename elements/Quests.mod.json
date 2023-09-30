@@ -1,0 +1,11 @@
+{
+  "_fv": 47,
+  "_type": "tab",
+  "definition": {
+    "name": "Quests",
+    "icon": {
+      "value": "Items.WRITABLE_BOOK"
+    },
+    "showSearch": true
+  }
+}
