@@ -92,16 +92,16 @@
       }
     },
     {
-      "name": "Tr",
+      "name": "QuestGui",
       "type": "gui",
-      "sortid": 6,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tr",
+      "registry_name": "quest_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/iceandollie/client/gui/TrScreen.java",
-          "src/main/java/net/mcreator/iceandollie/world/inventory/TrMenu.java"
+          "src/main/java/net/mcreator/iceandollie/world/inventory/QuestGuiMenu.java",
+          "src/main/java/net/mcreator/iceandollie/client/gui/QuestGuiScreen.java"
         ]
       }
     },
@@ -141,6 +141,20 @@
       }
     },
     {
+      "name": "Tr",
+      "type": "gui",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tr",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/client/gui/TrScreen.java",
+          "src/main/java/net/mcreator/iceandollie/world/inventory/TrMenu.java"
+        ]
+      }
+    },
+    {
       "name": "Testing",
       "type": "keybind",
       "sortid": 8,
@@ -150,20 +164,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/iceandollie/network/TestingMessage.java"
-        ]
-      }
-    },
-    {
-      "name": "QuestGui",
-      "type": "gui",
-      "sortid": 9,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "quest_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/iceandollie/world/inventory/QuestGuiMenu.java",
-          "src/main/java/net/mcreator/iceandollie/client/gui/QuestGuiScreen.java"
         ]
       }
     }
@@ -182,6 +182,22 @@
       "name": "balloon_snap",
       "files": [
         "snap"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "pop_2",
+      "files": [
+        "pop-1"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "pop_1",
+      "files": [
+        "pop_1"
       ],
       "category": "neutral",
       "subtitle": ""

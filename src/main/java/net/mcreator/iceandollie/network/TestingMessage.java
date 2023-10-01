@@ -1,22 +1,11 @@
 
 package net.mcreator.iceandollie.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.FriendlyByteBuf;
-
-import net.mcreator.iceandollie.procedures.TestingOnKeyPressedProcedure;
 import net.mcreator.iceandollie.IceandollieMod;
-
-import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TestingMessage {
+
 	int type, pressedms;
 
 	public TestingMessage(int type, int pressedms) {
@@ -47,17 +36,21 @@ public class TestingMessage {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
+
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(entity.blockPosition()))
 			return;
+
 		if (type == 0) {
 
 			TestingOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
+
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
 		IceandollieMod.addNetworkMessage(TestingMessage.class, TestingMessage::buffer, TestingMessage::new, TestingMessage::handler);
 	}
+
 }

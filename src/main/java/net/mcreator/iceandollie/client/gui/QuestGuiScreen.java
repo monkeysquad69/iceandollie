@@ -1,21 +1,9 @@
 package net.mcreator.iceandollie.client.gui;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.GuiGraphics;
-
-import net.mcreator.iceandollie.world.inventory.QuestGuiMenu;
-
-import java.util.HashMap;
-
-import com.mojang.blaze3d.systems.RenderSystem;
-
 public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
+
 	private final static HashMap<String, Object> guistate = QuestGuiMenu.guistate;
+
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
@@ -34,8 +22,11 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(guiGraphics);
+
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
+
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
+
 		if (mouseX > leftPos + 8 && mouseX < leftPos + 32 && mouseY > topPos + 16 && mouseY < topPos + 40)
 			guiGraphics.renderTooltip(font, Component.translatable("gui.iceandollie.quest_gui.tooltip_empty"), mouseX, mouseY);
 	}
@@ -57,6 +48,7 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 			this.minecraft.player.closeContainer();
 			return true;
 		}
+
 		return super.keyPressed(key, b, c);
 	}
 
@@ -77,5 +69,7 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 	@Override
 	public void init() {
 		super.init();
+
 	}
+
 }
