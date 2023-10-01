@@ -9,11 +9,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -22,7 +17,6 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
@@ -35,6 +29,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.iceandollie.procedures.BalloonOnInitialEntitySpawnProcedure;
+import net.mcreator.iceandollie.procedures.BalloonEntityDiesProcedure;
 import net.mcreator.iceandollie.init.IceandollieModEntities;
 
 import javax.annotation.Nullable;
@@ -50,7 +45,7 @@ public class BalloonEntity extends PathfinderMob {
 		setMaxUpStep(0.6f);
 		xpReward = 0;
 		setNoAi(false);
-		texture = (int) Math.round((Math.random()) * 10);
+		texture =(int) Math.round((Math.random()) * 10);
 	}
 
 	@Override
@@ -61,16 +56,7 @@ public class BalloonEntity extends PathfinderMob {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
-			@Override
-			protected double getAttackReachSqr(LivingEntity entity) {
-				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
-			}
-		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
+
 	}
 
 	@Override
@@ -85,7 +71,13 @@ public class BalloonEntity extends PathfinderMob {
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("iceandollie:balloon_pop"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("iceandollie:pop_2"));
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		BalloonEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override

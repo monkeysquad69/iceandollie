@@ -9,7 +9,7 @@ import net.mcreator.iceandollie.entity.BalloonEntity;
 import net.mcreator.iceandollie.client.model.Modelballoon;
 
 public class BalloonRenderer extends MobRenderer<BalloonEntity, Modelballoon<BalloonEntity>> {
-	public final ResourceLocation texture = new ResourceLocation("iceandollie", "textures/ballon.png");
+	public final ResourceLocation texture = new ResourceLocation("iceandollie", "textures/balloon.png");
 	public BalloonRenderer(EntityRendererProvider.Context context) {
 		super(context, new Modelballoon(context.bakeLayer(Modelballoon.LAYER_LOCATION)), 0.5f);
 	}
