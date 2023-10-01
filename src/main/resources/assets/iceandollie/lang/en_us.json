@@ -1,10 +1,9 @@
 {
   "entity.iceandollie.balloon": "Balloon",
-  "item.iceandollie.bamboo": "Bamboo",
   "subtitles.balloon_snap": "",
   "item_group.iceandollie.quests": "Quests",
-  "subtitles.pop_2": "",
-  "subtitles.pop_1": "",
+  "gui.iceandollie.quest_gui.tooltip_empty": "ooooooooooooooooo",
+  "key.iceandollie.testing": "Testing",
   "subtitles.balloon_pop": "",
   "item.iceandollie.balloon_spawn_egg": "Balloon Spawn Egg"
 }

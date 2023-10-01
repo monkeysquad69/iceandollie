@@ -15,18 +15,18 @@
       }
     ]
   },
-  "pop_1": {
-    "sounds": [
-      {
-        "name": "iceandollie:pop_1",
-        "stream": false
-      }
-    ]
-  },
   "pop_2": {
     "sounds": [
       {
         "name": "iceandollie:pop-1",
+        "stream": false
+      }
+    ]
+  },
+  "pop_1": {
+    "sounds": [
+      {
+        "name": "iceandollie:pop_1",
         "stream": false
       }
     ]

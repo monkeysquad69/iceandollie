@@ -11,11 +11,9 @@ import net.minecraftforge.common.ForgeSpawnEggItem;
 
 import net.minecraft.world.item.Item;
 
-import net.mcreator.iceandollie.item.BambooItem;
 import net.mcreator.iceandollie.IceandollieMod;
 
 public class IceandollieModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, IceandollieMod.MODID);
-	public static final RegistryObject<Item> BAMBOO = REGISTRY.register("bamboo", () -> new BambooItem());
-	public static final RegistryObject<Item> BALLOON_SPAWN_EGG = REGISTRY.register("balloon_spawn_egg", () -> new ForgeSpawnEggItem(IceandollieModEntities.BALLOON, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> BALLOON_SPAWN_EGG = REGISTRY.register("balloon_spawn_egg", () -> new ForgeSpawnEggItem(IceandollieModEntities.BALLOON, -52429, -65536, new Item.Properties()));
 }
