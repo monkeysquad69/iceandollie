@@ -25,7 +25,7 @@ public class IceandollieModEntities {
 	public static final RegistryObject<EntityType<BalloonEntity>> BALLOON = register("balloon",
 			EntityType.Builder.<BalloonEntity>of(BalloonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BalloonEntity::new)
 
-					.sized(0.6f, 0.6f));
+					.sized(0.6f, 0.65f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
