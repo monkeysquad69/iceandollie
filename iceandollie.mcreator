@@ -12,20 +12,6 @@
       }
     },
     {
-      "name": "Bamboo",
-      "type": "item",
-      "sortid": 1,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bamboo",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/iceandollie/item/BambooItem.java",
-          "src/main/resources/assets/iceandollie/models/item/bamboo.json"
-        ]
-      }
-    },
-    {
       "name": "Balloon",
       "type": "livingentity",
       "sortid": 3,
@@ -100,7 +86,6 @@
       "registry_name": "quest_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/iceandollie/network/QuestGuiButtonMessage.java",
           "src/main/java/net/mcreator/iceandollie/world/inventory/QuestGuiMenu.java",
           "src/main/java/net/mcreator/iceandollie/client/gui/QuestGuiScreen.java"
         ]
@@ -169,6 +154,27 @@
       }
     },
     {
+      "name": "Introquestdone",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introquestdone",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/procedures/IntroquestdoneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/quest"
+    },
+    {
       "name": "Introquest",
       "type": "procedure",
       "sortid": 10,
@@ -205,25 +211,17 @@
       "path": "~/quest"
     },
     {
-      "name": "Introquestdone",
-      "type": "procedure",
-      "sortid": 11,
+      "name": "Quest",
+      "type": "command",
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "introquestdone",
+      "registry_name": "quest",
       "metadata": {
-        "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/iceandollie/procedures/IntroquestdoneProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
+          "src/main/java/net/mcreator/iceandollie/command/QuestCommand.java"
         ]
-      },
-      "path": "~/quest"
+      }
     }
   ],
   "variable_elements": [],
