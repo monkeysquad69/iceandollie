@@ -30,7 +30,7 @@
       "type": "livingentity",
       "sortid": 3,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "balloon",
       "metadata": {
         "files": [
