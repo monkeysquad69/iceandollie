@@ -100,6 +100,7 @@
       "registry_name": "quest_gui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/iceandollie/network/QuestGuiButtonMessage.java",
           "src/main/java/net/mcreator/iceandollie/world/inventory/QuestGuiMenu.java",
           "src/main/java/net/mcreator/iceandollie/client/gui/QuestGuiScreen.java"
         ]
@@ -166,6 +167,63 @@
           "src/main/java/net/mcreator/iceandollie/network/TestingMessage.java"
         ]
       }
+    },
+    {
+      "name": "Introquest",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introquest",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/procedures/IntroquestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/quest"
+    },
+    {
+      "name": "Introquestdone",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "introquestdone",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/iceandollie/procedures/IntroquestdoneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/quest"
     }
   ],
   "variable_elements": [],
@@ -217,7 +275,12 @@
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "quest",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "iceandollie",

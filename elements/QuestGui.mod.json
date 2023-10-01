@@ -20,16 +20,28 @@
         }
       },
       {
-        "type": "tooltip",
+        "type": "imagebutton",
         "data": {
-          "name": "tooltip_empty",
-          "text": {
-            "fixedValue": "ooooooooooooooooo"
+          "name": "imagebutton_intro_quest",
+          "image": "intro_quest.png",
+          "hoveredImage": "intro_quest_select.png",
+          "onClick": {
+            "name": "Introquest"
           },
-          "width": 24,
-          "height": 24,
-          "x": 134,
-          "y": 53
+          "displayCondition": {
+            "name": "Introquestdone"
+          },
+          "x": 180,
+          "y": 45
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "intro_quest_done.png",
+          "use1Xscale": false,
+          "x": 180,
+          "y": 45
         }
       }
     ],

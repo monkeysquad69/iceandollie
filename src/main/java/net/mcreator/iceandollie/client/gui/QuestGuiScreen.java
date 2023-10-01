@@ -6,9 +6,13 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
 import net.mcreator.iceandollie.world.inventory.QuestGuiMenu;
+import net.mcreator.iceandollie.procedures.IntroquestdoneProcedure;
+import net.mcreator.iceandollie.network.QuestGuiButtonMessage;
+import net.mcreator.iceandollie.IceandollieMod;
 
 import java.util.HashMap;
 
@@ -19,6 +23,7 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	ImageButton imagebutton_intro_quest;
 
 	public QuestGuiScreen(QuestGuiMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -36,8 +41,6 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
-		if (mouseX > leftPos + 8 && mouseX < leftPos + 32 && mouseY > topPos + 16 && mouseY < topPos + 40)
-			guiGraphics.renderTooltip(font, Component.translatable("gui.iceandollie.quest_gui.tooltip_empty"), mouseX, mouseY);
 	}
 
 	@Override
@@ -47,6 +50,8 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 		RenderSystem.defaultBlendFunc();
 
 		guiGraphics.blit(new ResourceLocation("iceandollie:textures/screens/quest_gui.png"), this.leftPos + -1, this.topPos + 0, 0, 0, 256, 256, 256, 256);
+
+		guiGraphics.blit(new ResourceLocation("iceandollie:textures/screens/intro_quest_done.png"), this.leftPos + 54, this.topPos + 8, 0, 0, 64, 64, 64, 64);
 
 		RenderSystem.disableBlend();
 	}
@@ -77,5 +82,19 @@ public class QuestGuiScreen extends AbstractContainerScreen<QuestGuiMenu> {
 	@Override
 	public void init() {
 		super.init();
+		imagebutton_intro_quest = new ImageButton(this.leftPos + 54, this.topPos + 8, 64, 64, 0, 0, 64, new ResourceLocation("iceandollie:textures/screens/atlas/imagebutton_intro_quest.png"), 64, 128, e -> {
+			if (IntroquestdoneProcedure.execute(entity)) {
+				IceandollieMod.PACKET_HANDLER.sendToServer(new QuestGuiButtonMessage(0, x, y, z));
+				QuestGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (IntroquestdoneProcedure.execute(entity))
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_intro_quest", imagebutton_intro_quest);
+		this.addRenderableWidget(imagebutton_intro_quest);
 	}
 }

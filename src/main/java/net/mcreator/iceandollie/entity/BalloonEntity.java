@@ -41,6 +41,7 @@ import net.mcreator.iceandollie.init.IceandollieModEntities;
 import javax.annotation.Nullable;
 
 public class BalloonEntity extends PathfinderMob {
+	public int texture;
 	public BalloonEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(IceandollieModEntities.BALLOON.get(), world);
 	}
@@ -50,6 +51,7 @@ public class BalloonEntity extends PathfinderMob {
 		setMaxUpStep(0.6f);
 		xpReward = 0;
 		setNoAi(false);
+		texture =(int) Math.round((Math.random()) * 10);
 	}
 
 	@Override
